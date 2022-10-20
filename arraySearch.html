@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Search</title>
+  <script>
+    // let data = [5,10,15,20,25,30];
+    // let srchitem = 25;
+    // let indx = undefined;
+    // for(let i=0; i<data.length; i++){
+    //   if(data[i] === srchitem){
+    //     indx = i;
+    //     break;
+    //   }
+    // }
+    // console.log(`element found at position : ${indx}`);
+    //=================================================
+
+    function search() {
+      let data = [5, 10, 15, 20, 25, 30];
+      let srchitem = document.getElementById("input").value;
+      let indx = undefined;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] === parseInt(srchitem)) {
+          indx = i;
+          break;
+        }
+      }
+      console.log(`element found at position : ${indx}`);
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" id="input" placeholder="Enter element to search:">
+  <button onclick="search()">Search</button>
+</body>
+
+</html>

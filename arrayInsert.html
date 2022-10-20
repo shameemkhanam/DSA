@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Insertion</title>
+  <script>
+    // let arr = [10, 20, 30, 40];
+    // let pos = 2;
+    // let val = 300;
+
+    // let newArr = arr.slice(0,2);
+    // let newArr2 = newArr.concat([val]);
+    // let newArr3 = arr.slice(pos+1);
+    // console.log(newArr2.concat(newArr3));
+
+    //=================================================
+
+    // let arr = [10, 20, 30, 40];
+    // arr.splice(2,0,300);
+    // console.log(arr);
+
+    //=================================================
+
+    // let dataArr = [60,30,10,45];
+    // let newElem = 70;   //move frm last elems to right, 1 position
+    // let pos = 2;
+
+    // console.log(dataArr);
+
+    // for(let i=dataArr.length-1; i>=0; i--){
+    //   // console.log(dataArr[i]);
+    //   if( i >= pos){
+    //     dataArr[i+1] = dataArr[i];
+    //     if( i == pos){
+    //       dataArr[i] = newElem;
+    //     }
+    //   }
+    // }
+    // console.log(dataArr);    
+
+    //===================================================
+
+
+    function addElem() {
+      let dataArr = [60, 30, 10, 45];
+      let pos = document.getElementById("inputPos").value;
+      let newElem = document.getElementById("inputElem").value;
+      console.log(dataArr);
+
+      for (let i = dataArr.length - 1; i >= 0; i--) {
+
+        if (i >= pos) {
+          dataArr[i + 1] = dataArr[i];
+          if (i == pos) {
+            dataArr[i] = parseInt(newElem);
+          }
+        }
+      }
+      console.log(dataArr);
+    }
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <input type="text" id="inputPos" placeholder="Enter the position">
+  <input type="text" id="inputElem" placeholder="Enter new element">
+  <button onclick="addElem()">Add the element</button>
+</body>
+
+</html>
