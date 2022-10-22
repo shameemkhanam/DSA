@@ -1,0 +1,57 @@
+<!-- this logic is for sorted Array -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merge array while</title>
+  <script>
+    let arr1 = [2, 4, 6, 8,200,300,345,444];  //sorted array
+    let arr2 = [1,5, 10, 15, 20,555]; //sorted array
+    let arr3 = [];
+    let arrIndx1 = 0;
+    let arrIndx2 = 0;
+    let arrIndx3 = 0;
+    while (arrIndx1 < arr1.length && arrIndx2 < arr2.length) {
+      if (arr1[arrIndx1] < arr2[arrIndx2]) {
+        arr3[arrIndx3] = arr1[arrIndx1];
+        arrIndx1++;
+      }
+      else {
+        arr3[arrIndx3] = arr2[arrIndx2];
+        arrIndx2++;
+      }
+      arrIndx3++;
+    }
+    // while (arrIndx1 < arr1.length || arrIndx2 < arr2.length) {
+    //   arr3[arrIndx3] = arr1[arrIndx1];
+    //   arrIndx1++;      
+    //   arr3[arrIndx3] = arr2[arrIndx2];
+    //   arrIndx2++;
+
+    //   arrIndx3++;
+    // }
+
+    while(arrIndx1 < arr1.length){
+      arr3[arrIndx3] = arr1[arrIndx1];
+      arrIndx1++;
+      arrIndx3++;
+    }
+    while(arrIndx2 < arr2.length){
+      arr3[arrIndx3] = arr2[arrIndx2];
+      arrIndx2++;
+      arrIndx3++;
+    }
+    console.log(arr3);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
