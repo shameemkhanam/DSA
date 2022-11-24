@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays</title>
+</head>
+
+<body>
+  <script>
+    // let arr = [10, 20, 30, 40, 50, 60];
+    //traversal------>
+    // for(let i=0;i<arr.length;i++){
+    //   console.log(arr[i]);
+    // }
+
+    //Accessing------>
+    // let pos = 3;
+    // console.log(arr[pos]);
+
+    //deletion------->
+    // let pos = 3; //to remove 30
+    // for (let i = pos; i < arr.length; i++) {
+    //   arr[i] = arr[i + 1];
+    // }
+    // arr.length = arr.length - 1;
+    // console.log(arr);
+
+    //built-in method:
+    // arr.splice(pos, 1);
+    // console.log(arr);
+
+    //search-------->
+    // let item = 20;
+    // let index = undefined;
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (arr[i] == item) {
+    //     index = i;
+    //     break;
+    //   }
+    // }
+    // console.log(index);
+
+    //built-in method:
+    // console.log(arr.indexOf(item));
+
+    //Merge------> 2 for loops with unsorted arrays:
+    // let arr1 = [1, 2, 3, 4];
+    // let arr2 = [6, 7, 8, 9];
+    // let arr3 = [];
+    // for (let i = 0; i < arr1.length; i++) {
+    //   arr3[i] = arr1[i];
+    // }
+    // for (let i = 0; i < arr2.length; i++) {
+    //   arr3[arr1.length + i] = arr2[i];
+    // }
+    // console.log(arr3);
+
+    //merge--------> using while with sorted arrays:
+    // let arr1 = [1, 2, 3, 4, 5];
+    // let arr2 = [6, 7, 8, 9, 10, 11, 12];
+    // let arr3 = [];
+    // let d1 = 0;
+    // let d2 = 0;
+    // let d3 = 0;
+    // while (d1 < arr1.length && d2 < arr2.length) {
+    //   if (arr1[d1] < arr2[d2]) {
+    //     arr3[d3] = arr1[d1];
+    //     d1++;
+    //     d3++;
+    //   }
+    //   else {
+    //     arr3[d3] = arr2[d2];
+    //     d2++;
+    //     d3++;
+    //   }
+    // }
+
+    // while (d1 < arr1.length) {
+    //   arr3[d3++] = arr1[d1++];
+    // }
+
+    // while (d2 < arr2.length) {
+    //   arr3[d3++] = arr2[d2++];
+    // }
+    // console.log(arr3);
+
+    // ARRAY SORTING ===================>by comparing adjacent elements:
+    let arr = [21, 12, 34];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        // console.log(i, j);
+        if (arr[j] > arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];  //swap
+        }
+        // console.warn(i, arr);
+      }
+    }
+    console.log(arr); //sorted array
+
+
+
+  </script>
+</body>
+
+</html>
