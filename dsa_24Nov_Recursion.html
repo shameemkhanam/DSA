@@ -1,0 +1,61 @@
+<script>
+  // function apple(x) {
+  //   console.warn(x);
+  //   if (x < 10) {    //any condition is important...
+  //     apple(x + 1);
+  //   }
+  // }
+  // let data = 0;
+  // apple(data);
+  //=================================
+
+  //without recursion:factorial
+  // let fact = 1;
+  // let val = 5;
+  // for (val; val >= 1; val--) {
+  //   fact = fact * val;
+  // }
+  // console.log(fact);
+
+  //with recursion: factorial: 
+  // function fact(x){
+  //   if(x == 0){
+  //     return 1;
+  //   }
+  //   return x * fact(x-1);
+  // }
+  // let data=4;
+  // console.warn(fact(data));
+
+
+  //=================================
+
+  //reverse array with recursion:
+  let arr = [1, 2, 3, 4, 5];
+  // console.log(arr.reverse());    or
+  //---------
+  // let reversedArr=[];
+  // for (let i = arr.length - 1; i >= 0; i--) {
+  //   reversedArr.push(arr[i]);
+  // }
+  // console.log(reversedArr);    or
+  //----------
+
+  // recursion:
+  function reverseRecursion(array, startIndx, endIndx) {
+    // console.log(array);
+    if (startIndx <= endIndx) {
+      [array[startIndx], array[endIndx]] = [array[endIndx], array[startIndx]];  //swap
+      reverseRecursion(array, startIndx + 1, endIndx - 1);
+    }
+    return array;
+  }
+  let r = reverseRecursion(arr, 0, arr.length - 1);
+  console.log(r);
+
+
+
+
+
+
+</script>

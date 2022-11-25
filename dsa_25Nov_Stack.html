@@ -1,0 +1,36 @@
+<script>
+  let data = [];
+  let currentSize = data.length;
+  let max = 5;
+
+  function push(newVal) {
+    if (currentSize >= max) {
+      alert("Stack is full..." + newVal);
+    }
+    else {
+      data[currentSize] = newVal;
+      currentSize += 1;
+    }
+  }
+
+  function pop() {
+    if (currentSize > 0) {
+      currentSize -= 1;
+      data.length = currentSize;
+    }
+    else {
+      alert("Stack is empty");
+    }
+  }
+  push(20);
+  push(10);
+  push(40);
+  push(50);
+  push(60);
+  // push(70);
+  pop();
+  // pop();
+  console.log(data);
+
+
+</script>
