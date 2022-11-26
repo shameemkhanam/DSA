@@ -1,0 +1,82 @@
+<script>
+  // class Stack {
+  //   items = [];
+  //   curSize;
+  //   maxSize;
+  //   constructor(size) {
+  //     this.maxSize = size;
+  //     this.curSize = this.items.length;
+  //   }
+  //   push(val) {
+  //     if (this.curSize >= this.maxSize) {
+  //       alert("Stack is full...");
+  //     }
+  //     else {
+  //       this.items[this.curSize] = val;
+  //       this.curSize++;
+  //     }
+  //   }
+  //   pop() {
+  //     if (this.curSize > 0) {
+  //       this.curSize--;
+  //       this.items.length = this.curSize;
+  //     } else {
+  //       alert("Stack is empty!");
+  //     }
+  //   }
+  //   display() {
+  //     console.log(this.items);
+  //   }
+  // }
+
+  // let st1 = new Stack(3);
+  // st1.push(11);
+  // st1.push(22);
+  // st1.display();
+
+  //==========================================================
+
+  //reverse a string with stack class:
+  class StackForRev {
+    items = [];
+    cursize;
+    maxsize;
+
+    constructor(size) {
+      this.maxsize = size;
+      this.cursize = this.items.length;
+    }
+
+    push(val) {
+      this.items[this.cursize] = val;
+      this.cursize++;
+    }
+
+    pop() {
+      let topEle = this.items[this.cursize - 1];
+      this.cursize--;
+      this.items.length = this.cursize;
+      return topEle;
+    }
+
+    reverseStr(str) {
+      let revStr = "";
+      for (let i = 0; i < str.length; i++) {
+        this.push(str[i]);
+      }
+      for (let i = 0; i < str.length; i++) {
+        revStr += this.pop();
+      }
+      console.log(revStr);
+    }
+
+    display() {
+      console.log(this.items);
+    }
+  }
+
+  let s1 = new StackForRev(6);
+  s1.reverseStr("hello");
+
+
+</script>

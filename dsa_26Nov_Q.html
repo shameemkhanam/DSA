@@ -1,0 +1,97 @@
+<script>
+  let queue = [];
+  let cursize = queue.length;
+  let maxsize = 4;
+
+  function enqueue(val) {
+    if (cursize >= maxsize) {
+      alert("Q is full");
+    }
+    else {
+      queue[cursize] = val;
+      cursize++;
+    }
+  }
+
+  function display() {
+    console.log(queue);
+  }
+
+  function dequeue() {
+    if (cursize > 0) {
+      for (let i = 0; i < queue.length; i++) {
+        queue[i] = queue[i + 1];
+      }
+      cursize--;
+      queue.length = cursize;
+    }
+    else {
+      alert("Q is empty");
+    }
+  }
+
+  // enqueue(10);
+  // enqueue(20);
+  // enqueue(30);
+  // display();
+  // dequeue();
+  // display();
+  // dequeue();
+  // display();
+  // dequeue();
+  // display();
+
+  //===============================================================
+
+  //using built in methods:
+
+  class Queue {
+    items = [];
+    maxsize;
+    constructor(size) {
+      this.maxsize = size;
+    }
+
+    enqueue(val) {
+      if (this.items.length >= this.maxsize) {
+        alert("Q full");
+      }
+      else {
+        return this.items.push(val);
+      }
+    }
+
+    dequeue() {
+      if (this.items.length > 0) {
+        return this.items.shift();
+      }
+      else {
+        alert("Q empty");
+      }
+    }
+
+    display() {
+      console.log(this.items);
+    }
+
+    isEmpty(){
+      return this.items.length == 0;
+    }
+  }
+
+  let q = new Queue(3);
+  q.enqueue(1);
+  q.display();
+  q.enqueue(2);
+  q.display();
+  q.enqueue(3);
+  q.display();
+  q.enqueue(4);
+  q.display();
+  q.isEmpty();
+
+
+</script>
+<!-- here queue===> [1,2,3,4]
+
+FIFO==> 1 WILL BE REMOVED FIRST , AFTER THAT 2, AFTER THAT 3.... -->

@@ -1,0 +1,71 @@
+<script>
+  // let stack = [];
+  // let currentSize = stack.length;
+
+  // function push(val) {
+  //   stack[currentSize] = val;
+  //   currentSize += 1;
+  // }
+
+  // function pop() {
+  //   let topItem = stack[currentSize - 1];
+  //   currentSize -= 1;
+  //   stack.length = currentSize;
+  //   return topItem;
+  // }
+
+  // // push(10);
+  // // push(20);
+  // // // pop();
+
+  // let str = "shameem khan";
+  // // let strArr=[];
+  // for (let i = 0; i < str.length; i++) {
+  //   push(str[i]);
+  // }
+
+
+  // function reverseStr(item) {
+  //   let revStr = "";
+  //   for (let i = 0; i < item.length; i++) {
+  //     revStr += pop();
+  //   }
+  //   return revStr;
+  // }
+
+  // console.log(`given str: ${str}`);
+  // let res = reverseStr(str);
+  // console.log(`Reversed str: ${res}`);
+  // console.log(stack);
+  //===============================================================
+
+  let stack = [];
+  let cursize = stack.length;
+
+  function push(val) {
+    stack[cursize] = val;
+    cursize += 1;
+  }
+
+  function pop() {
+    let topEle = stack[cursize - 1];
+    cursize -= 1;
+    stack.length = cursize;
+    return topEle;
+  }
+
+  let str = "hello world";
+  for (let i = 0; i < str.length; i++) {
+    push(str[i]);
+  }
+  console.log(stack);
+  let empStr = "";
+  for (let i = 0; i < str.length; i++) {
+    empStr += pop();
+  }
+
+
+  console.log(empStr);
+  console.log(stack);
+
+</script>
