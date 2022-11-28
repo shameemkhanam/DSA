@@ -1,0 +1,39 @@
+<script>
+  class LinkedList {
+    constructor(data) {
+      this.head = {
+        value: data,
+        next: null
+      };
+      this.tail = this.head;
+      this.length = 1;
+    }
+
+    append(data) {
+      const newnode = {
+        value: data,
+        next: null
+      };
+
+      this.tail.next = newnode;
+      this.tail = newnode;
+      this.length++;
+    }
+
+    prepend(data) {
+      const newnode = {
+        value: data,
+        next: null
+      };
+
+      newnode.next = this.head;
+      this.head = newnode;
+      this.length++;
+    }
+  }
+
+  let l1 = new LinkedList(100);
+  l1.append(200);
+  l1.prepend(300);
+  console.log(l1);
+</script>

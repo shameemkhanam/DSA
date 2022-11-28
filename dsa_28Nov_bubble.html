@@ -1,0 +1,18 @@
+<script>
+  let arr = [4, 3, 7, 1, 5];
+  let isswapped = false;
+  for (let i = 0; i < arr.length - 1; i++) {
+    // console.warn(arr[i]);
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j + 1] < arr[j]) {
+        //swap
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+        isswapped = true;
+      }
+    }
+    if (!isswapped)
+      break;
+  }
+
+  console.log(arr);
+</script>

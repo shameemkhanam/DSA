@@ -1,0 +1,94 @@
+<!-- 2 types:
+Linear search
+Binary search -->
+<script>
+  //  1..Linear Search 
+
+  let array = [10, 20, 30, 40, 20];
+
+  // function linearSearch(arr, item) {
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] == item) {
+  //       return "found at " + i;
+  //       break;
+  //     }
+  //   }
+  //   return "not found";
+  // }
+
+  // let r = linearSearch(array, 0);
+  // console.log(r);
+  //---------------------------------------------
+
+  //searching multiple elements:
+  // let result = [];
+
+  // function linearSearch(arr, item) {
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] == item) {
+  //       result.push(i);
+  //     }
+  //   }
+  //   return result;
+  // }
+
+  // let r = linearSearch(array, 20);
+  // console.log(r);
+
+  //====================================================
+
+  //2.. Binary search: only for sorted arrays:
+
+  // iterative:
+  // let data = [12, 24, 35, 56];
+  // let findEle = 24;
+  // let start = 0;
+  // let end = data.length - 1;
+  // let pos = undefined;
+  // while (start <= end) {
+  //   let mid = Math.floor((start + end) / 2);
+  //   if (data[mid] == findEle) {
+  //     pos = mid;
+  //     break;
+  //   }
+  //   else if (data[mid] < findEle) {
+  //     start = mid + 1;
+  //   }
+  //   else {
+  //     end = mid - 1;
+  //   }
+  // }
+  // console.log(pos);
+
+  //-----------------------
+
+  //Recursion:
+
+  let data = [12, 34, 45, 56];
+
+  let findEle = 45;
+  let start = 0;
+  let end = data.length - 1;
+  let pos = undefined;
+
+  function binSrchRecursion(dataP, startP, endP) {
+    let mid = Math.floor((startP + endP) / 2);
+    if (dataP[mid] == findEle) {
+      pos = mid;
+      return true;
+    }
+    else if (dataP[mid] < findEle) {
+      binSrchRecursion(dataP, mid + 1, endP);
+    }
+    else {
+      binSrchRecursion(dataP, startP, mid - 1);
+    }
+    return pos;
+  }
+
+  let r = binSrchRecursion(data, start, end);
+  console.log(r);
+
+
+
+</script>
