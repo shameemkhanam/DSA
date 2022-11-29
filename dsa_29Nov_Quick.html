@@ -1,0 +1,163 @@
+<script>
+  // Javascript implementation of QuickSort
+
+
+  // // A utility function to swap two elements
+  // function swap(arr, i, j) {
+  //   let temp = arr[i];
+  //   arr[i] = arr[j];
+  //   arr[j] = temp;
+  // }
+
+  // /* This function takes last element as pivot, places
+  // the pivot element at its correct position in sorted
+  // array, and places all smaller (smaller than pivot)
+  // to left of pivot and all greater elements to right
+  // of pivot */
+  // function partition(arr, low, high) {
+
+  //   // pivot
+  //   let pivot = arr[high];
+
+  //   // Index of smaller element and
+  //   // indicates the right position
+  //   // of pivot found so far
+  //   let i = (low - 1);
+
+  //   for (let j = low; j <= high - 1; j++) {
+
+  //     // If current element is smaller
+  //     // than the pivot
+  //     if (arr[j] < pivot) {
+
+  //       // Increment index of
+  //       // smaller element
+  //       i++;
+  //       swap(arr, i, j);
+  //     }
+  //   }
+  //   swap(arr, i + 1, high);
+  //   return (i + 1);
+  // }
+
+
+  // function quickSort(arr, low, high) {
+  //   if (low < high) {
+
+  //     // pi is partitioning index, arr[p]
+  //     // is now at right place
+  //     let pi = partition(arr, low, high);
+
+  //     // Separately sort elements before
+  //     // partition and after partition
+  //     quickSort(arr, low, pi - 1);
+  //     quickSort(arr, pi + 1, high);
+  //   }
+  // }
+
+  // // Function to print an array
+  // function printArray(arr, size) {
+  //   for (let i = 0; i < size; i++)
+  //     document.write(arr[i] + " ");
+
+  //   document.write("<br>");
+  // }
+
+  // // Driver Code
+
+  // let arr = [10, 7, 8, 9, 1, 5];
+  // let n = arr.length;
+
+  // quickSort(arr, 0, n - 1);
+  // document.write("Sorted array: <br>");
+  // printArray(arr, n);
+
+  // This code is contributed by Saurabh Jaiswal
+  //=========================================================
+
+  //taking first element as the pivot:
+
+  // function partition(arr, l, h) {
+  //   let i = l;
+  //   let j = h;
+  //   let pivot = arr[l];
+  //   while (i < j) {
+  //     while (arr[i] <= pivot) {
+  //       i++;
+  //     }
+  //     while (arr[j] > pivot) {
+  //       j--;
+  //     }
+  //     if (i < j) {
+  //       //swap a[i] and a[j]
+  //       [arr[i], arr[j]] = [arr[j], arr[i]];
+  //     }
+  //     //swap a[j],a[l]
+  //     [arr[j], arr[l]] = [arr[l], arr[j]];
+
+  //   }
+  //   return j;
+  // }
+
+  // function qsort(arr, l, h) {
+  //   if (l < h) {
+  //     let pivot = partition(arr, l, h);
+  //     qsort(arr, l, pivot - 1);
+  //     qsort(arr, pivot + 1, h);
+  //   }
+  //   return arr;
+  // }
+  // let arr = [23, 11, 24, 34, 44, 32];
+  // let r = qsort(arr, 0, arr.length - 1);
+  // console.log(r);
+
+  //==============================================================
+
+  //taking median as the pivot element:
+
+  function partition(arr, l, h) {
+    let i = l, j = h, pivot = arr[Math.floor((l + h) / 2)];
+
+    while (i <= j) {
+      while (arr[i] < pivot) {
+        i++;
+      }
+      while (arr[j] > pivot) {
+        j--;
+      }
+      if (i <= j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+        i++;
+        j--;
+      }
+    }
+    return i;
+  }
+
+  function qsort(arr, l, h) {
+    let index;
+
+    if (arr.length > 1) {
+      index = partition(arr, l, h); //get the left pointer returned
+
+      if (l < index - 1) {
+        //more elements on the left side
+        qsort(arr, l, index - 1);
+      }
+
+      if (index < h) {
+        //more elements on the right side
+        qsort(arr, index, h);
+      }
+    }
+    return arr;
+  }
+
+  let arr = [23, 11, 24, 34, 44, 32];
+  let r = qsort(arr, 0, arr.length - 1);
+  console.log(r);
+
+  //=============================================================
+
+  
+</script>
